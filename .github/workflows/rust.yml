@@ -16,7 +16,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build
+
+    - name: Change directory (tmp/hello)
+      run: pushd tmp/hello
+    - name: Build (tmp/hello)
       run: cargo build --verbose
-    - name: Run tests
+    - name: Run tests (tmp/hello)
+      run: cargo test --verbose
+
+    - name: Change directory (echor)
+      run: |
+        popd
+        pushd echor
+    - name: Build (echor)
+      run: cargo build --verbose
+    - name: Run tests (echor)
       run: cargo test --verbose
