@@ -28,3 +28,9 @@ jobs:
         cd echor
         cargo build --verbose
         cargo test --verbose
+
+    - name: Test catr
+      run: |
+        cd catr
+        cargo build --verbose
+        cargo test --verbose
